@@ -1,0 +1,350 @@
+[gd_scene load_steps=3 format=3 uid="uid://ki17grpwashw"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6xomi"]
+[ext_resource type="Script" path="res://viterbi6.gd" id="1_dcbh7"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6xomi")
+
+[node name="code" type="Node2D" parent="."]
+script = ExtResource("1_dcbh7")
+
+[node name="ui" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="ui"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 438.0
+offset_bottom = 340.0
+
+[node name="Label" type="Label" parent="ui/Panel"]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 95.0
+offset_bottom = 34.0
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 132.0
+offset_right = 245.0
+offset_bottom = 158.0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "Inverted message bits:"
+
+[node name="Label3" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 56.0
+offset_right = 172.0
+offset_bottom = 82.0
+size_flags_horizontal = 8
+text = "Message length:"
+
+[node name="Label4" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 94.0
+offset_right = 245.0
+offset_bottom = 120.0
+size_flags_horizontal = 8
+text = "Packet length:"
+
+[node name="Label5" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 169.0
+offset_right = 245.0
+offset_bottom = 195.0
+size_flags_horizontal = 8
+text = "Channel BER:"
+
+[node name="Label6" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 232.0
+offset_right = 245.0
+offset_bottom = 258.0
+size_flags_horizontal = 8
+text = "Decoding iterations:"
+
+[node name="Label7" type="Label" parent="ui/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 269.0
+offset_right = 245.0
+offset_bottom = 295.0
+size_flags_horizontal = 8
+text = "Number of tests/messages:"
+
+[node name="zle_bity" type="SpinBox" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 127.0
+offset_right = 406.0
+offset_bottom = 158.0
+max_value = 24.0
+
+[node name="dl_wiad" type="SpinBox" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 55.0
+offset_right = 406.0
+offset_bottom = 86.0
+min_value = 4.0
+max_value = 16.0
+step = 4.0
+value = 4.0
+
+[node name="ilosc_iteracji" type="SpinBox" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 228.0
+offset_right = 406.0
+offset_bottom = 259.0
+max_value = 20.0
+value = 4.0
+
+[node name="ilosc_testow" type="SpinBox" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 267.0
+offset_right = 406.0
+offset_bottom = 298.0
+min_value = 1.0
+max_value = 10000.0
+value = 100.0
+
+[node name="DL_pak" type="LineEdit" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 90.0
+offset_right = 405.0
+offset_bottom = 121.0
+theme_override_colors/font_uneditable_color = Color(0.847059, 0.847059, 0.847059, 1)
+text = "24"
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="BER2" type="LineEdit" parent="ui/Panel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 165.0
+offset_right = 406.0
+offset_bottom = 196.0
+theme_override_colors/font_uneditable_color = Color(0.847059, 0.847059, 0.847059, 1)
+text = "0"
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Panel2" type="Panel" parent="ui"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 21.0
+offset_right = 1135.0
+offset_bottom = 341.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_following = true
+
+[node name="Label" type="Label" parent="ui/Panel2"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 31.0
+text = "History"
+
+[node name="Panel3" type="Panel" parent="ui"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 360.0
+offset_right = 1136.0
+offset_bottom = 637.0
+
+[node name="LineEdit" type="LineEdit" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 13.0
+offset_right = 648.0
+offset_bottom = 56.0
+text = "00000000"
+alignment = 1
+max_length = 16
+
+[node name="Label" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 21.0
+offset_right = 190.0
+offset_bottom = 47.0
+text = "Data to send:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 81.0
+offset_right = 211.0
+offset_bottom = 107.0
+text = "Sent sequence:"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 134.0
+offset_right = 211.0
+offset_bottom = 160.0
+text = "Recieved sequence:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 185.0
+offset_right = 216.0
+offset_bottom = 211.0
+text = "Decoded sequence:"
+horizontal_alignment = 1
+
+[node name="iter" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 233.0
+offset_right = 216.0
+offset_bottom = 259.0
+text = "Iteration: 0"
+
+[node name="wyslane" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 79.0
+offset_right = 825.0
+offset_bottom = 105.0
+text = "0000000000000"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="odebrane" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 134.0
+offset_right = 825.0
+offset_bottom = 160.0
+text = "0000000000000"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="zdekodowane" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 186.0
+offset_right = 825.0
+offset_bottom = 212.0
+text = "0000000000000"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="is_ok" type="Label" parent="ui/Panel3"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 233.0
+offset_right = 825.0
+offset_bottom = 259.0
+text = "OK"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="Panel4" type="Panel" parent="ui"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 361.0
+offset_right = 266.0
+offset_bottom = 490.0
+
+[node name="Label" type="Label" parent="ui/Panel4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 106.0
+offset_bottom = 34.0
+text = "Test results"
+
+[node name="BER" type="Label" parent="ui/Panel4"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 43.0
+offset_right = 149.0
+offset_bottom = 69.0
+text = "BER: ?"
+
+[node name="PER" type="Label" parent="ui/Panel4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 76.0
+offset_right = 145.0
+offset_bottom = 102.0
+text = "PER: ?"
+
+[node name="Button" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 544.0
+offset_right = 173.0
+offset_bottom = 586.0
+text = "Begin tests"
+
+[node name="Button2" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 595.0
+offset_right = 173.0
+offset_bottom = 637.0
+text = "Run one test"
+
+[node name="Button3" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 543.0
+offset_right = 284.0
+offset_bottom = 585.0
+disabled = true
+text = "Stop"
+
+[connection signal="value_changed" from="ui/Panel/zle_bity" to="." method="_on_zle_bity_value_changed"]
+[connection signal="value_changed" from="ui/Panel/dl_wiad" to="." method="_on_dl_wiad_value_changed"]
+[connection signal="value_changed" from="ui/Panel/ilosc_iteracji" to="." method="_on_ilosc_iteracji_value_changed"]
+[connection signal="value_changed" from="ui/Panel/ilosc_testow" to="." method="_on_ilosc_testow_value_changed"]
+[connection signal="pressed" from="ui/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ui/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ui/Button3" to="." method="stop_test"]
